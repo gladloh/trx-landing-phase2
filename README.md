@@ -162,5 +162,3 @@ The 768px breakpoint includes a `min-height: 500px` guard to prevent tablet styl
 - [ ] Replace hero images with final assets
 - [ ] Verify form submission against the live API
 - [ ] Test across breakpoints and devices
-# trx-landing-phase2
-# trx-landing-phase2
