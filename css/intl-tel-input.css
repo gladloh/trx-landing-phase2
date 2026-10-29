@@ -1,0 +1,175 @@
+/* ─── intl-tel-input — match existing phone field design ─────────────── */
+
+/* Container full width */
+.field .iti {
+  width: 100%;
+}
+
+/* Override inline padding-left and font-size set by intl-tel-input */
+.field .iti .iti__tel-input {
+  padding-left: 0 !important;
+  font-size: var(--text-base) !important;
+}
+
+/* When country selector is visible, add padding for it */
+.field.is-focused .iti .iti__tel-input,
+.field.has-value .iti .iti__tel-input {
+  padding-left: 90px !important;
+}
+
+@media (min-width: 1024px) {
+  .field.is-focused .iti .iti__tel-input,
+  .field.has-value .iti .iti__tel-input {
+    padding-left: 100px !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  .field .iti .iti__tel-input {
+    font-size: var(--text-lg) !important;
+  }
+
+  .field .iti__selected-dial-code {
+    font-size: var(--text-lg) !important;
+  }
+
+  .iti__search-input {
+    font-size: var(--text-lg);
+  }
+
+  .iti__country {
+    font-size: var(--text-lg);
+  }
+
+  .iti__country-name,
+  .iti__dial-code {
+    font-size: var(--text-lg);
+  }
+}
+
+/* Hide the country selector by default, show on focus/has-value */
+.field .iti__country-container {
+  visibility: hidden;
+  width: 0;
+  overflow: hidden;
+}
+
+.field.is-focused .iti__country-container,
+.field.has-value .iti__country-container {
+  visibility: visible;
+  width: auto;
+  overflow: visible;
+}
+
+/* Selected flag button — match old dropdown trigger */
+.field .iti__selected-country {
+  background: transparent;
+  border: none;
+  padding: 12px 8px 12px 0;
+  gap: 4px;
+  cursor: pointer;
+}
+
+/* Dial code text */
+.field .iti__selected-dial-code {
+  font-family: var(--font-sans);
+  font-size: var(--text-base) !important;
+  font-weight: 400;
+  color: var(--color-dark);
+}
+
+/* Arrow/chevron */
+.field .iti__arrow {
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 4px solid var(--color-dark);
+}
+
+.field .iti__arrow--up {
+  border-top: none;
+  border-bottom: 4px solid var(--color-dark);
+}
+
+/* Dropdown list — match old dropdown menu */
+.iti__dropdown-content {
+  font-family: var(--font-sans);
+  background: #F5F5F5;
+  border: none !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  max-height: 300px;
+  margin-top: -3px;
+}
+
+.iti__country-list {
+  box-shadow: none !important;
+}
+
+.iti--container {
+  box-shadow: none !important;
+}
+
+/* Search input */
+.iti__search-input {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: var(--color-dark);
+  border: none;
+  border-radius: 0;
+  background: #F5F5F5;
+  padding: 14px 36px;
+}
+
+.iti__search-input:focus {
+  outline: none;
+}
+
+/* Country rows */
+.iti__country {
+  padding: 14px 16px;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: var(--color-dark);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.iti__country.iti__highlight:hover {
+  background: rgba(29, 29, 29, 0.05);
+}
+
+.iti__country.iti__highlight {
+  background: #F5F5F5;
+}
+
+.iti__country[aria-selected="true"],
+.iti__country.iti__active,
+.iti__country.iti__selected {
+  background: #E1E1E1;
+}
+
+.iti__country-name,
+.iti__dial-code {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-dark);
+}
+
+.iti__divider {
+  border-bottom: 1px solid rgba(29, 29, 29, 0.1);
+  margin: 0;
+  padding: 0;
+}
+
+/* Hide checkmark next to selected country */
+.iti__country-check,
+span.iti__country-check,
+.iti__country .iti__country-check {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  visibility: hidden !important;
+  overflow: hidden !important;
+}

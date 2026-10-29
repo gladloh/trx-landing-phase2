@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <pattern id="geo" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <!-- Outer square -->
+      <rect x="1" y="1" width="38" height="38" stroke="#C9A96E" stroke-width="0.5" fill="none"/>
+      <!-- Inner diamond -->
+      <polygon points="20,3 37,20 20,37 3,20" stroke="#C9A96E" stroke-width="0.5" fill="none"/>
+      <!-- Cross lines -->
+      <line x1="20" y1="1" x2="20" y2="39" stroke="#C9A96E" stroke-width="0.3" opacity="0.5"/>
+      <line x1="1" y1="20" x2="39" y2="20" stroke="#C9A96E" stroke-width="0.3" opacity="0.5"/>
+      <!-- Diagonal lines -->
+      <line x1="1" y1="1" x2="39" y2="39" stroke="#C9A96E" stroke-width="0.3" opacity="0.3"/>
+      <line x1="39" y1="1" x2="1" y2="39" stroke="#C9A96E" stroke-width="0.3" opacity="0.3"/>
+      <!-- Centre dot -->
+      <circle cx="20" cy="20" r="2" stroke="#C9A96E" stroke-width="0.5" fill="none"/>
+    </pattern>
+    <!-- Fade mask: top-left corner fades to transparent towards bottom-right -->
+    <linearGradient id="fade" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="white" stop-opacity="1"/>
+      <stop offset="60%"  stop-color="white" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="corner-mask">
+      <rect width="200" height="200" fill="url(#fade)"/>
+    </mask>
+  </defs>
+  <rect width="200" height="200" fill="url(#geo)" mask="url(#corner-mask)"/>
+</svg>

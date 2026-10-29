@@ -1,0 +1,114 @@
+/* ─── Font Faces ───────────────────────────────────────────────────────── */
+
+/* New Paris Headline — headers (400 only) */
+@font-face {
+  font-family: 'New Paris';
+  src: url('../assets/font/New Paris/NewParisHeadline-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Circular — body (300, 400, 500) */
+@font-face {
+  font-family: 'Circular';
+  src: url('../assets/font/Circular/CircularXX-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circular';
+  src: url('../assets/font/Circular/CircularXX-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circular';
+  src: url('../assets/font/Circular/CircularStd-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Variables ─────────────────────────────────────────────────────────── */
+
+:root {
+  /* Colours */
+  --color-bg:             #1D1D1D;
+  --color-white:          #FFFFFF;
+  --color-dark:           #1D1D1D;
+  --color-cta-bg:         #1A1A1A;
+  --color-cta-hover:      #333333;
+  --color-field-line:     #CCCCCC;
+  --color-field-focus:    #1A1A1A;
+  --color-error:          #C0392B;
+  --color-text-body:      #333333;
+  --color-text-muted:     #1D1D1D;
+  --color-bg-overlay:     rgba(0, 0, 0, 0.50);
+  --color-backdrop:       rgba(0, 0, 0, 0.55);
+  --color-divider:        rgba(255, 255, 255, 0.5);
+  --color-btn-hover-light:#BEBEBE;
+  --color-btn-hover-dark: #3D3D3D;
+  --color-btn-active:     #6F6F6F;
+  --color-modal-btn-border: #A9A9A9;
+  --color-modal-btn-bg:     #FFFFFF;
+  --color-modal-btn-hover:  #F5F5F5;
+  --color-modal-btn-active: #BEBEBE;
+  --backdrop-blur:        4px;
+
+  /* Typography */
+  --font-serif:           'New Paris', Georgia, serif;
+  --font-sans:            'Circular', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Font Scale — responsive (overridden per breakpoint) */
+  --text-header:          clamp(48px, 8vw, 120px);
+  --text-body:            16px;
+  --text-cta:             16px;
+  --text-disclaimer:      10px;
+
+  /* Button padding — responsive */
+  --btn-padding:          16px 32px;
+
+  /* Static sizes */
+  --text-xs:              10px;
+  --text-sm:              11px;
+  --text-md:              14px;
+  --text-base:            16px;
+  --text-lg:              20px;
+  --text-xl:              24px;
+  --text-2xl:             32px;
+  --text-3xl:             48px;
+  --text-4xl:             60px;
+
+  /* Logo */
+  --logo-width:           156px;
+
+  /* Spacing */
+  --space-xs:             8px;
+  --space-sm:             16px;
+  --space-md:             24px;
+  --space-lg:             40px;
+  --space-xl:             64px;
+  --space-2xl:            110px;
+
+  /* Modal */
+  --modal-max-width:      967px;
+  --modal-max-height:     790px;
+  --modal-height-mobile:  670px;
+  --modal-max-height-mobile:  650px;
+
+  /* Transitions */
+  --transition-fast:      0.2s ease;
+  --transition-med:       0.4s ease;
+  --transition-slow:      0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Z-index layers */
+  --z-hero:               0;
+  --z-ui:                 10;
+  --z-backdrop:           100;
+  --z-modal:              200;
+}

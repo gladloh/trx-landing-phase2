@@ -1,0 +1,33 @@
+/*
+ * animations.css
+ * Initial hidden states — GSAP reveals elements during page-load timeline.
+ */
+
+/* UI elements start invisible — GSAP fades them in */
+[data-animate="logo"] {
+  opacity: 0;
+}
+
+/* Bottom bar hidden until SplitText line reveal */
+.bottom-bar__label,
+.bottom-bar__text-title,
+.bottom-bar__text-body,
+.bottom-bar__cta,
+.logo__phase-btn,
+.footer,
+.footer__brand-logo,
+.footer__link,
+.footer__social-link {
+  opacity: 0;
+}
+
+/* Headlines hidden until SplitText mask reveal */
+.headline__line {
+  opacity: 0;
+}
+
+/* Form ↔ success cross-fade targets */
+[data-animate="form-content"],
+[data-animate="success-content"] {
+  /* GSAP handles opacity cross-fade */
+}

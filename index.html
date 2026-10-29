@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="icon" type="image/png" href="./assets/svg/favicon.png">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MQV3P4H');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Fonts (loaded via @font-face in variables.css) -->
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/SplitText.min.js"></script>
+
+  <!-- intl-tel-input -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@26.7.6/build/css/intlTelInput.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/modal.css">
+  <link rel="stylesheet" href="./css/intl-tel-input.css">
+  <link rel="stylesheet" href="./css/animations.css">
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQV3P4H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- ── Page ─────────────────────────────────────────────────────────── -->
+  <main class="page">
+
+    <!-- Hero -->
+    <section class="hero" data-animate="hero">
+      <div class="hero__overlay"></div>
+    </section>
+
+    <!-- UI Layer -->
+    <div class="ui">
+
+      <!-- Logo -->
+      <div class="logo" data-animate="logo">
+        <img class="logo__img" alt="">
+        <a class="logo__phase-btn" href="#" target="_blank" rel="noopener noreferrer"></a>
+      </div>
+
+      <!-- Content (centered) -->
+      <div class="content">
+
+        <!-- Headline -->
+        <div class="headline">
+          <span class="headline__line headline__line--left" id="headline-1" data-animate="headline-1"></span>
+          <span class="headline__line headline__line--right" id="headline-2" data-animate="headline-2"></span>
+        </div>
+
+        <div class="bottom-group">
+          <!-- Bottom Bar -->
+          <div class="bottom-bar">
+            <span class="bottom-bar__line"></span>
+            <div class="bottom-bar__feature">
+              <span class="bottom-bar__label" id="bar-label"></span>
+              <div class="bottom-bar__text">
+                <div class="bottom-bar__text-title" id="bar-feature-title"></div>
+                <p class="bottom-bar__text-body" id="bar-feature-body"></p>
+              </div>
+            </div>
+            <button class="bottom-bar__cta" id="cta-btn" data-modal-open>
+              <span id="cta-text"></span>
+            </button>
+          </div>
+
+        </div>
+
+      </div><!-- /content -->
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__main">
+
+          <!-- Brand + JV logos -->
+          <div class="footer__brand">
+            <img class="footer__brand-logo" src="./assets/svg/footer-logo.svg"
+              alt="A joint venture between TRX Tun Razak Exchange and Lendlease">
+          </div>
+
+          <!-- Links + Social -->
+          <div class="footer__right">
+            <div class="footer__links" id="footer-links">
+              <!-- Injected by content.js -->
+            </div>
+            <div class="footer__social" id="footer-social">
+              <!-- Injected by content.js -->
+            </div>
+          </div>
+
+        </div>
+      </footer>
+
+    </div><!-- /ui -->
+
+  </main>
+
+  <!-- ── Splash ──────────────────────────────────────────────────────── -->
+  <div class="splash" id="splash">
+    <img class="splash__logo" alt="">
+  </div>
+
+  <!-- ── Backdrop ──────────────────────────────────────────────────────── -->
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- ── Modal ─────────────────────────────────────────────────────────── -->
+  <aside class="modal" id="modal" role="dialog" aria-modal="true" aria-label="">
+    <div class="modal__container">
+
+      <div class="modal__buttons">
+        <!-- Back (shown on policy view) -->
+        <button class="modal__back" id="policy-back" aria-label="Back" type="button" style="display:none;">
+          <svg viewBox="0 0 24 24">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+
+        <!-- Close -->
+        <button class="modal__close" id="modal-close" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+
+      <div class="modal__inner">
+
+        <!-- Form content -->
+        <div id="form-content" data-animate="form-content">
+          <form class="form" id="registration-form" action="https://submit-form.com/pVGPCTieH" method="POST" novalidate>
+            
+
+            <!-- Salutation + Full Name row -->
+            <div class="field-row">
+
+              <!-- Salutation -->
+              <div class="field field--salutation" data-field="salutation">
+                <select class="field__input field__input--select" name="salutation" id="salutation" required>
+                  <option value="" disabled selected><!-- Placeholder injected by content.js --></option>
+                  <!-- Options injected by content.js -->
+                </select>
+                <span class="field__error" role="alert"></span>
+              </div>
+
+              <!-- Full Name -->
+              <div class="field field--name" data-field="fullName">
+                <input class="field__input" type="text" name="fullName" id="fullName" placeholder=" " autocomplete="name"
+                  required>
+                <label class="field__label" for="fullName"></label>
+                <span class="field__error" role="alert"></span>
+              </div>
+
+            </div>
+
+            <!-- Email -->
+            <div class="field" data-field="email">
+              <input class="field__input" type="email" name="email" id="email" placeholder=" " autocomplete="email"
+                required>
+              <label class="field__label" for="email"></label>
+              <span class="field__error" role="alert"></span>
+            </div>
+
+            <!-- Phone -->
+            <div class="field" data-field="phone">
+              <input class="field__input" type="tel" name="phone" id="phone" placeholder=" " autocomplete="tel"
+                required>
+              <label class="field__label" for="phone"></label>
+              <span class="field__error" role="alert"></span>
+            </div>
+
+            <!-- Nationality -->
+            <div class="field" data-field="nationality">
+              <input type="hidden" name="nationality" id="nationality" value="">
+              <div class="dropdown" id="dropdown-nationality">
+                <button class="dropdown__trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="dropdown__value" id="nationality-value"></span>
+                  <span class="dropdown__chevron">
+                    <img src="./assets/svg/chevron.svg" alt="">
+                  </span>
+                </button>
+                <div class="dropdown__menu" id="nationality-menu">
+                  <input type="text" class="dropdown__search" id="nationality-search" placeholder="Search..." autocomplete="off">
+                  <ul class="dropdown__list" id="nationality-list" role="listbox">
+                    <!-- Options injected by content.js -->
+                  </ul>
+                </div>
+              </div>
+              <span class="field__error" role="alert"></span>
+            </div>
+
+            <!-- Unit Type -->
+            <div class="field" data-field="unitType">
+              <input type="hidden" name="unitType" id="unitType" value="">
+              <div class="dropdown" id="dropdown-unitType">
+                <button class="dropdown__trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="dropdown__value" id="dropdown-value"></span>
+                  <span class="dropdown__chevron">
+                    <img src="./assets/svg/chevron.svg" alt="">
+                  </span>
+                </button>
+                <ul class="dropdown__menu" id="dropdown-menu" role="listbox">
+                  <!-- Options injected by content.js -->
+                </ul>
+              </div>
+              <span class="field__error" role="alert"></span>
+            </div>
+
+            <!-- Checkboxes -->
+            <div class="form__checkboxes">
+              <label class="checkbox" data-field="agreePrivacy">
+                <input class="checkbox__input" type="checkbox" name="agreePrivacy" id="agreePrivacy" required>
+                <span class="checkbox__box"></span>
+                <span class="checkbox__label" id="checkbox-privacy-label"></span>
+              </label>
+
+              <label class="checkbox" data-field="agreeDisclaimer">
+                <input class="checkbox__input" type="checkbox" name="agreeDisclaimer" id="agreeDisclaimer" required>
+                <span class="checkbox__box"></span>
+                <span class="checkbox__label" id="checkbox-disclaimer-label"></span>
+              </label>
+            </div>
+
+            <!-- Submit + Disclaimer -->
+            <div class="form__footer">
+
+              <!-- API error -->
+              <div class="form__api-error" id="form-api-error" role="alert"></div>
+              <button class="form__submit" id="form-submit" type="submit">
+                <span class="btn-text" id="submit-text"></span>
+              </button>
+            </div>
+
+          </form>
+        </div><!-- /form-content -->
+
+        <!-- Success message -->
+        <div class="success-message" id="success-message" data-animate="success-content">
+          <h2 class="success-message__header" id="success-header"></h2>
+          <p class="success-message__text" id="success-text"></p>
+        </div>
+
+        <!-- Error message -->
+        <div class="success-message" id="error-message" data-animate="error-content">
+          <h2 class="success-message__header" id="error-header"></h2>
+          <p class="success-message__text" id="error-text"></p>
+        </div>
+
+        <!-- Policy view (replaces form content) -->
+        <div class="modal__policy" id="policy-view">
+          <div class="modal__policy-header">
+            <h2 class="modal__policy-title" id="policy-title"></h2>
+          </div>
+          <hr class="modal__policy-divider">
+          <div class="modal__policy-body" id="policy-body"></div>
+        </div>
+
+      </div><!-- /modal__inner -->
+
+    </div>
+  </aside>
+
+  <!-- ── Scripts ───────────────────────────────────────────────────────── -->
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@26.7.6/build/js/intlTelInput.min.js"></script>
+  <script src="https://unpkg.com/@botpoison/browser" async></script>
+  <script src="./js/content.js"></script>
+  <script src="./js/animations.js"></script>
+  <script src="./js/modal.js"></script>
+  <script src="./js/form.js"></script>
+
+  <script>
+    // ── Inject content ────────────────────────────────────
+
+    // Page title
+    document.title = CONTENT.pageTitle;
+
+    // Logo + splash
+    document.querySelector('.logo__img').src = CONTENT.logoSrc;
+    document.querySelector('.logo__img').alt = CONTENT.logoAlt;
+    document.querySelector('.splash__logo').src = CONTENT.logoSrc;
+    document.querySelector('.splash__logo').alt = CONTENT.logoAlt;
+    document.querySelector('.logo__phase-btn').textContent = CONTENT.phaseTag;
+
+    // Headline
+    document.getElementById('headline-1').textContent = CONTENT.headlineLine1;
+    document.getElementById('headline-2').textContent = CONTENT.headlineLine2;
+
+    // Bottom bar
+    document.getElementById('bar-label').textContent = CONTENT.whatToExpectLabel;
+    const feature = CONTENT.features[0];
+    document.getElementById('bar-feature-title').textContent = feature.number + '\u2003' + feature.title;
+    document.getElementById('bar-feature-body').textContent = feature.body;
+    document.getElementById('cta-text').textContent = CONTENT.ctaButton;
+
+    // Salutation options
+    const salutationSelect = document.getElementById('salutation');
+    salutationSelect.options[0].textContent = CONTENT.formFields.salutation;
+    CONTENT.salutations.forEach(s => {
+      const opt = document.createElement('option');
+      opt.value = s;
+      opt.textContent = s;
+      salutationSelect.appendChild(opt);
+    });
+
+    // Form field labels
+    document.querySelector('label[for="fullName"]').textContent = CONTENT.formFields.fullName;
+    document.querySelector('label[for="email"]').textContent = CONTENT.formFields.email;
+    document.querySelector('label[for="phone"]').textContent = CONTENT.formFields.phone;
+    // Nationality placeholder set by dropdown injection below
+
+    // Modal aria-label
+    document.getElementById('modal').setAttribute('aria-label', CONTENT.ctaButton);
+
+    // Submit + success
+    document.getElementById('submit-text').textContent = CONTENT.submitButton;
+    document.getElementById('success-header').textContent = CONTENT.successHeader;
+    document.getElementById('success-text').textContent = CONTENT.successMessage;
+    document.getElementById('error-header').textContent = CONTENT.errorHeader;
+    document.getElementById('error-text').textContent = CONTENT.errorMessage;
+
+    // Checkbox consent
+    document.getElementById('checkbox-privacy-label').innerHTML =
+      CONTENT.checkboxPrivacy.en + '<br><em>' + CONTENT.checkboxPrivacy.ms + '</em>';
+    document.getElementById('checkbox-disclaimer-label').innerHTML =
+      CONTENT.checkboxDisclaimer.en + '<br><em>' + CONTENT.checkboxDisclaimer.ms + '</em>';
+
+    // Dropdown options
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    const dropdownValue = document.getElementById('dropdown-value');
+    dropdownValue.textContent = CONTENT.formFields.unitType;
+    dropdownValue.classList.add('is-placeholder');
+    CONTENT.unitTypes.forEach(type => {
+      const li = document.createElement('li');
+      li.className = 'dropdown__item';
+      li.dataset.value = type;
+      li.textContent = type;
+      li.setAttribute('role', 'option');
+      dropdownMenu.appendChild(li);
+    });
+
+    // Nationality dropdown options
+    const nationalityList = document.getElementById('nationality-list');
+    const nationalityValue = document.getElementById('nationality-value');
+    nationalityValue.textContent = CONTENT.formFields.nationality;
+    nationalityValue.classList.add('is-placeholder');
+    document.getElementById('nationality-search').placeholder = 'Search ' + CONTENT.formFields.nationality.toLowerCase() + '...';
+    CONTENT.nationalities.forEach(name => {
+      const li = document.createElement('li');
+      li.className = 'dropdown__item';
+      li.dataset.value = name;
+      li.textContent = name;
+      li.setAttribute('role', 'option');
+      nationalityList.appendChild(li);
+    });
+
+    // ── Policy View (inside modal) ──────────────────────────────────────────
+    (() => {
+      const formContent = document.getElementById('form-content');
+      const policyView = document.getElementById('policy-view');
+      const policyTitle = document.getElementById('policy-title');
+      const policyBody = document.getElementById('policy-body');
+      const backBtn = document.getElementById('policy-back');
+
+      function showPolicy(title, paragraphs) {
+        return (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          policyTitle.textContent = title;
+          policyBody.innerHTML = '';
+          paragraphs.forEach(item => {
+            if (typeof item === 'string') {
+              const p = document.createElement('p');
+              p.textContent = item;
+              policyBody.appendChild(p);
+            } else if (item && item.heading) {
+              const h = document.createElement('h4');
+              h.className = 'policy__heading';
+              h.textContent = item.heading;
+              policyBody.appendChild(h);
+            } else if (item && item.list) {
+              const ul = document.createElement('ul');
+              ul.className = 'policy__list';
+              item.list.forEach(li => {
+                const liEl = document.createElement('li');
+                liEl.textContent = li;
+                ul.appendChild(liEl);
+              });
+              policyBody.appendChild(ul);
+            }
+          });
+          Animations.formToPolicy(formContent, policyView);
+          policyBody.scrollTop = 0;
+        };
+      }
+
+      function hidePolicy() {
+        Animations.policyToForm(policyView, formContent);
+      }
+
+      document.querySelectorAll('[data-open-privacy]').forEach(link => {
+        link.addEventListener('click', showPolicy(CONTENT.privacyPolicyTitle, CONTENT.privacyPolicy));
+      });
+
+      document.querySelectorAll('[data-open-disclaimer]').forEach(link => {
+        link.addEventListener('click', showPolicy(CONTENT.websiteDisclaimerTitle, CONTENT.websiteDisclaimer || []));
+      });
+
+      backBtn.addEventListener('click', hidePolicy);
+    })();
+
+    // ── Footer ──────────────────────────────────────────────────────────────
+    (() => {
+      const f = CONTENT.footer;
+
+      // Links
+      const linksEl = document.getElementById('footer-links');
+      const socialIcons = {
+        Facebook: '<svg viewBox="0 0 40 40" fill="none"><path d="M22.5 20h-2v7h-3v-7h-1.5v-2.5h1.5V16c0-2 1-3.2 3.2-3.2h2.3v2.5h-1.4c-.7 0-.9.3-.9.9v1.3h2.3L22.5 20z" fill="currentColor"/></svg>',
+        Instagram: '<svg viewBox="0 0 40 40" fill="none"><rect x="13" y="13" width="14" height="14" rx="3.5" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="20" r="3.5" stroke="currentColor" stroke-width="1.5"/><circle cx="25.5" cy="14.5" r="1" fill="currentColor"/></svg>',
+      };
+
+      f.links.forEach(link => {
+        const a = document.createElement('a');
+        a.className = 'footer__link';
+        a.href = link.url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.innerHTML = '<span class="footer__link-bar footer__link-bar--' + link.color + '"></span>' + link.label;
+        linksEl.appendChild(a);
+      });
+
+      // Social icons
+      const socialEl = document.getElementById('footer-social');
+      f.social.forEach(s => {
+        const a = document.createElement('a');
+        a.className = 'footer__social-link';
+        a.href = s.url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.setAttribute('aria-label', s.label);
+        a.innerHTML = socialIcons[s.label] || '';
+        socialEl.appendChild(a);
+      });
+    })();
+
+    // ── Init modules ───────────────────────────────────────────────────────
+    Modal.init();
+    Form.init();
+    Animations.init();
+  </script>
+
+</body>
+
+</html>
